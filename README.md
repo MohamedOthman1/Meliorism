@@ -37,4 +37,3 @@ npm install
 # What's coming next ?
   I have a lot of great features coming up
   
-  # What's coming next ?
