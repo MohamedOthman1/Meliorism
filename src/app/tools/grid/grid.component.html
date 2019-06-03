@@ -1,0 +1,25 @@
+<kendo-grid [data]="gridData" [height]="409" [pageSize]="state.take"
+[skip]="state.skip"
+[sort]="state.sort"
+[filter]="state.filter"
+[sortable]="true"
+[pageable]="true"
+[filterable]="true"
+(dataStateChange)="dataStateChange($event)">
+<ng-template kendoGridToolbarTemplate>
+  <button class="kendo-pdf" kendoGridPDFCommand icon="file-pdf">Export to PDF</button>
+  <button class="kendo-excel" type="button" kendoGridExcelCommand icon="file-excel">Export to Excel</button>
+</ng-template>
+<ng-container *ngFor="let columns of grid.customizedGrid.columns">
+    <kendo-grid-column field="{{columns.field}}" title="{{columns.title}}" width="{{columns.width}}" filter="{{columns.filter}}" format="{0:c}">
+      </kendo-grid-column>
+</ng-container>
+  <kendo-grid-column width="15" filter="false">
+      <ng-template kendoGridCellTemplate let-dataItem  >
+        <a (click)="showConfirmation()"> <i class="fa fa-trash" ></i></a>
+        <a [routerLink]="grid.customizedGrid.url" routerLinkActive="router-link-active"  > <i class="fa fa-edit"></i></a>
+      </ng-template>
+  </kendo-grid-column>
+  <app-kendoPDF></app-kendoPDF>
+</kendo-grid>
+<div kendoDialogContainer></div>

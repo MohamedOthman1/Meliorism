@@ -1,0 +1,19 @@
+<div *ngIf="bread.breadcrumb!==null">
+  <div class="page-header page-header-default" *ngIf="bread.breadcrumb.title!==''">
+    <div class="page-header-content">
+      <div class="page-title page-padding">
+        <h3 class="no-margin"><span class="text-semibold page-title-span">{{bread.breadcrumb.title}}</span></h3>
+        <a class="heading-elements-toggle"><i class="icon-more"></i></a>
+      </div>
+      <div class="pages-url">
+        <ng-container *ngFor="let url of bread.breadcrumb.pages; let i = index">
+          <i *ngIf="i > 0" class="fa fa-arrow-right"></i>
+          <a class="breadcrumb-link" *ngIf="url.url" [routerLink]="url.url" routerLinkActive="active">
+            {{url.text}}
+          </a>
+          <span *ngIf="!url.url">{{url.text}}</span>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

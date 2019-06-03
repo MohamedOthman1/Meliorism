@@ -1,0 +1,14 @@
+<svg width="147" height="51" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="53" width="149" y="-1" x="-1"/>
+ </g>
+
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="layer1">
+   <path stroke="#ffffff" fill="#ffffff" id="path2605" d="m5.449405,8.578129l-3.73065,4.687657l11.578665,13.475081l-11.017551,14.001089l3.897468,4.463331l11.116125,-13.869587l4.200773,4.811424l-4.033955,4.679922l3.905051,4.594833l15.915926,-18.46442l-16.560449,-17.853322l-3.518337,4.463331l3.518337,3.937323l-3.601746,4.509743l-11.669657,-13.436404zm19.221949,13.482817l4.587487,4.942926l-3.821642,4.502008l-4.246269,-4.896513l3.480424,-4.54842z"/>
+  </g>
+  <text stroke="#ffffff" transform="matrix(0.9642956852912903,0,0,1,5.285354336723685,0) " fill="#ffffff" stroke-width="0" x="36" y="35.9375" id="svg_2" font-size="24" font-family="Oswald, sans-serif" text-anchor="start" xml:space="preserve" font-weight="bold">Meliorism</text>
+ </g>
+</svg>

@@ -1,0 +1,18 @@
+<kendo-grid-pdf fileName="{{pdfname}}" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
+  <kendo-grid-pdf-margin top="2cm" left="1cm" right="1cm" bottom="2cm"></kendo-grid-pdf-margin>
+  <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
+    <div class="page-template">
+      <div class="header">
+        <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+        {{grid.customizedGrid.title}}
+      </div>
+      <div class="footer">
+        Page {{ pageNum }} of {{ totalPages }}
+      </div>
+    </div>
+  </ng-template>
+  <ng-container *ngFor="let columns of grid.customizedGrid.columns">
+      <kendo-grid-column field="{{columns.field}}" title="{{columns.title}}">
+        </kendo-grid-column>
+  </ng-container>
+<kendo-grid-excel></kendo-grid-excel>

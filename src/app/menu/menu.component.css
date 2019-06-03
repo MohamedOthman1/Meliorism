@@ -1,0 +1,21 @@
+img {
+  width: 70%;
+  height: 70%;
+  margin: auto;
+}
+
+h3{
+  text-align: center;
+}
+
+.btn-view {
+  color: #6c757d;
+  background-color: transparent;
+  background-image: none;
+  border-color: #6c757d;
+}
+
+.btn-view:hover {
+  background-color: #005571 !important;
+  color: #fff;
+}

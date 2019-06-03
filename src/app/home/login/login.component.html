@@ -1,0 +1,69 @@
+<div class="container">
+  <form class="form-horizontal" [formGroup]="loginForm">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h2>Sign in</h2>
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 field-label-responsive">
+        <label for="name">Username</label>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon" style="width: 2.6rem">
+              <i class="fa fa-user"></i>
+            </div>
+            <input type="text" name="name" formControlName="userName" [ngClass]="{'is-invalid': loginForm.get('userName').errors
+            && loginForm.get('userName').touched}"
+                   class="form-control" id="name" placeholder="John Doe" required autofocus />
+
+          </div>
+            <div class="form-control-feedback">
+          <span class="text-danger align-middle">
+            <i class="fa fa-exclamation-circle"  *ngIf="loginForm.get('userName').touched && loginForm.get('userName').hasError('required')">
+              Please insert a Username</i>
+          </span>
+            </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-3 field-label-responsive">
+        <label for="password">Password</label>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group has-danger">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon" style="width: 2.6rem">
+              <i class="fa fa-key"></i>
+            </div>
+            <input type="password" formControlName="password" [ngClass]="{'is-invalid': loginForm.get('password').errors
+            && loginForm.get('password').touched}"
+                   name="password" class="form-control" id="password" placeholder="Password" required />
+          </div>
+          <div class="form-control-feedback">
+          <span class="text-danger align-middle">
+            <i class="fa fa-exclamation-circle" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">
+              Password is required </i>
+          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <button type="submit"  class="btn btn-success" (click)="login()">
+          <i class="fa fa-user-plus"></i> Sign in
+        </button>
+        <a  [routerLink]="" (click)="register()" style="color: #000">Register here.</a>
+      </div>
+    </div>
+  </form>
+</div>
+

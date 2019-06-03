@@ -1,0 +1,18 @@
+
+<div class="split left">
+  <div class="logo-class">
+    <img src="../../assets/images/logo.png" height="453" width="567" alt="">
+  </div>
+</div>
+
+<div class="split right">
+  <div class="register-class">
+    <div *ngIf="!actionMode">
+    <app-register (loginForm)="toggleMode($event)"></app-register>
+    </div>
+    <div *ngIf="actionMode">
+      <app-login (registerForm)="toggleMode($event)"></app-login>
+    </div>
+  </div>
+</div>
+

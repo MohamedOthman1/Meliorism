@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+
+/*====================================================
+               Kendo Confirmaation dialog
+======================================================*/
+
+.k-dialog-titlebar {
+  background-color: #005571
+}
+
+.k-dialog-buttongroup .k-primary:not(:hover):not(.k-state-hover):not(:active):not(.k-state-eactive) {
+  color: #005571
+}
+
+.k-button.k-primary:hover,
+.k-button.k-primary.k-state-hover,
+.k-action-buttons .k-primary:hover,
+.k-action-buttons .k-primary.k-state-hvoer,
+.k-slider .k-draghandle:hover,
+.k-switch-on:hover .k-switch-handle
+{
+  border-color: #005571;
+  background-color:#005571
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* ---------------------------------------------------
+           Font Awesome
+----------------------------------------------------- */
+
+
+.fa-trash {
+	margin-right: 10px
+}
+.fa-trash {
+  height: 18px;
+  color: #ff0000;
+  font-size: 17px;
+}
+.fa-edit {
+  height: 18px;
+  color: #000;
+  font-size: 17px;
+}

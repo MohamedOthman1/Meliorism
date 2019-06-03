@@ -1,0 +1,97 @@
+<div class="card">
+  <form class="form-horizontal" [formGroup]="employeeForm">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Employee Profile</h4>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group row">
+            <label for="name" class="col-4 col-form-label">First Name*</label>
+            <div class="col-8">
+              <input id="name" name="name" placeholder="First Name" class="form-control here" type="text"
+                formControlName="firstName" [ngClass]="{'is-invalid': employeeForm.get('firstName').errors
+                && employeeForm.get('firstName').touched}">
+                <div class="invalid-tooltip" *ngIf="employeeForm.get('firstName').touched && employeeForm.get('firstName').hasError('required')">
+                  First Name is required </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="lastName" class="col-4 col-form-label">Last Name*</label>
+            <div class="col-8">
+              <input id="lastName" name="lastName" placeholder="Last Name" class="form-control here" type="text"
+                formControlName="lastName" [ngClass]="{'is-invalid': employeeForm.get('lastName').errors
+                && employeeForm.get('lastName').touched}">
+                <div class="invalid-tooltip" *ngIf="employeeForm.get('lastName').touched && employeeForm.get('lastName').hasError('required')">
+                  Last Name is required </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="phoneNumber" class="col-4 col-form-label">Phone Number</label>
+            <div class="col-8">
+              <input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-control here" type="text"
+                formControlName="phoneNumber" [ngClass]="{'is-invalid': employeeForm.get('phoneNumber').errors
+                && employeeForm.get('phoneNumber').touched}">
+                <div class="invalid-tooltip" *ngIf="employeeForm.get('phoneNumber').touched && employeeForm.get('phoneNumber').hasError('required')">
+                  Phone Number is required </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="lastName" class="col-4 col-form-label">Gender*</label>
+            <div class="col-8">
+              <label>
+                <select class="custom-select" formControlName="gender" [ngClass]="{'is-invalid': employeeForm.get('gender').errors
+                  && employeeForm.get('gender').touched}">
+                  <option value="">Select Gender</option>
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                </select>
+              </label>
+              <div class="invalid-tooltip" *ngIf="employeeForm.get('gender').touched && employeeForm.get('gender').hasError('required')">
+                  Gender is required </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email" class="col-4 col-form-label">Date of Birth*</label>
+            <div class="col-8">
+              <input type="text" placeholder="Date of Birth" class="form-control" placement="top" bsDatepicker formControlName="dob"
+                [ngClass]="{'is-invalid': employeeForm.get('dob').errors
+                && employeeForm.get('dob').touched}" >
+                <div class="invalid-tooltip" *ngIf="employeeForm.get('dob').touched && employeeForm.get('dob').hasError('required')">
+                  Date of Birth is required </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="address" class="col-4 col-form-label">Address*</label>
+            <div class="col-8">
+              <input id="address" name="address" placeholder="Address" class="form-control here" type="text"
+                formControlName="address" [ngClass]="{'is-invalid': employeeForm.get('address').errors
+                && employeeForm.get('address').touched}">
+                <div class="invalid-tooltip" *ngIf="employeeForm.get('address').touched && employeeForm.get('address').hasError('required')">
+                  Address is required </div>
+              <small class="form-text text-muted">Apartment, suite , unit, building, floor, etc.</small>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="city" class="col-4 col-form-label">City*</label>
+            <div class="col-8">
+              <input id="city" name="city" placeholder="City" class="form-control here" type="text" formControlName="city"
+                [ngClass]="{'is-invalid': employeeForm.get('city').errors
+                && employeeForm.get('city').touched}">
+                <div class="invalid-tooltip"  *ngIf="employeeForm.get('city').touched && employeeForm.get('city').hasError('required')">
+                  City is required </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-4 col-8">
+              <button name="submit" type="submit" class="btn btn-primary" (click)='save()'><i class="fa fa-save"></i> Update Employee Profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

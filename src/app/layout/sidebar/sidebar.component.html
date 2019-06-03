@@ -1,0 +1,93 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" [ngClass]="{ 'active': navbarOpen }">
+      <div class="sidebar-header" routerLinkActive="active">
+        <a [routerLink]="['/home']">
+          <img class="svgImage" src="assets/images/svg/meliorism.svg" alt="">
+        </a>
+      </div>
+
+    <ul class="list-unstyled components">
+
+      <li routerLinkActive="active">
+        <a  [routerLink]="['/index']"><i class="fa fa-tachometer"></i>Dashboard</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/menu']"><i class="fa fa-cutlery"></i> Menu</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/order/ordersList']"><i class="fa fa-wpforms"></i>
+          Orders</a>
+      </li>
+      <li>
+        <a [routerLink]="['/not-found']" ><i class="fa fa-calendar-o"></i> Reservation</a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['/employee/employeeList']"><i class="fa fa-briefcase"></i> Employees</a>
+      </li>
+      <li>
+        <a [routerLink]="['/not-found']"><i class="fa fa-envelope-o"></i> Messages</a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" (click)="toggleNavbar()" [ngClass]="{ 'navbar-btn active': navbarOpen , 'navbar-btn':!navbarOpen }"
+          class="navbar-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" *ngIf="!navbarOpen">
+          <i class="fa fa-align-justify"></i>
+      </button>
+      </div>
+      <div class="box">
+        <div class="notifications">
+          <i class="fa fa-bell"></i>
+          <span class="num">4</span>
+          <ul class="notification-class">
+            <li class="icon">
+              <span class="icon"><i class="fa fa-user"></i></span>
+              <span class="text">Notification test</span>
+            </li>
+            <li class="icon">
+              <span class="icon"><i class="fa fa-user"></i></span>
+              <span class="text">Notification test</span>
+            </li>
+            <li class="icon">
+              <span class="icon"><i class="fa fa-user"></i></span>
+              <span class="text">Notification test</span>
+            </li>
+            <li class="icon">
+              <span class="icon"><i class="fa fa-user"></i></span>
+              <span class="text">Notification test</span>
+            </li>
+            <li class="icon">
+              <span class="icon"><i class="fa fa-user"></i></span>
+              <span class="text">Notification test</span>
+            </li>
+            <li class="icon">
+              <span class="icon"><i class="fa fa-user"></i></span>
+              <span class="text">Notification test</span>
+            </li>  <li class="icon">
+            <span class="icon"><i class="fa fa-user"></i></span>
+            <span class="text">Notification test</span>
+          </li>
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <app-breadcrumb class="breadcrumb-style" *ngIf="bread.breadcrumb!== null"></app-breadcrumb>
+    <router-outlet class="components-class"></router-outlet>
+  </div>
+</div>

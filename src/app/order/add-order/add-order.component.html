@@ -1,0 +1,84 @@
+<div class="card">
+  <form class="form-horizontal" [formGroup]="orderForm">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Order</h4>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group row">
+            <label for="table" class="col-4 col-form-label">Order No*</label>
+            <div class="col-8">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa fa-hashtag" aria-hidden="true"></i></span>
+                <input id="table" name="table" placeholder="Enter order number" class="form-control here" type="number"
+                  formControlName="table" [ngClass]="{'is-invalid': orderForm.get('table').errors
+                  && orderForm.get('table').touched}" />
+                <div class="invalid-feedback" *ngIf="orderForm.get('table').touched && orderForm.get('table').hasError('required')">
+                  Order No is required .
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="customer" class="col-4 col-form-label">Customer*</label>
+            <div class="col-8">
+                <input id="customer" name="customer" placeholder="Enter customer name" class="form-control here" type="text"
+                  formControlName="customer" [ngClass]="{'is-invalid': orderForm.get('customer').errors
+                  && orderForm.get('customer').touched}" />
+                <div class="invalid-feedback" *ngIf="orderForm.get('customer').touched && orderForm.get('customer').hasError('required')">
+                  Customer Name is required .
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="quantity" class="col-4 col-form-label">Quantity*</label>
+            <div class="col-8">
+              <input id="quantity" name="quantity" placeholder="Enter quantity" class="form-control here" type="number"
+                formControlName="quantity" [ngClass]="{'is-invalid': orderForm.get('quantity').errors
+                    && orderForm.get('quantity').touched}" />
+              <div class="invalid-feedback" *ngIf="orderForm.get('quantity').touched && orderForm.get('quantity').hasError('required')">
+                Quantity is required .
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="foodItem" class="col-4 col-form-label">Food Item*</label>
+            <div class="col-8">
+              <label>
+                <select class="custom-select" formControlName="foodItem" [ngClass]="{'is-invalid': orderForm.get('foodItem').errors
+                  && orderForm.get('foodItem').touched}">
+                  <option value="">Select food item</option>
+                  <option value="1">French Fries</option>
+                  <option value="2">Chicken Burger</option>
+                  <option value="2">etc ...</option>
+                </select>
+              </label>
+              <div class="invalid-feedback" *ngIf="orderForm.get('foodItem').touched && orderForm.get('foodItem').hasError('required')">
+                Food Item is required </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="address" class="col-4 col-form-label">Order Price</label>
+            <div class="col-8">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fa fa-dollar" aria-hidden="true"></i></span>
+                <input type="number" min="0" step=".01" class="form-control" name="price" id="price" placeholder="Price"
+                  [disabled]="true"/>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-4 col-8">
+              <button name="submit" type="submit" class="btn btn-primary" (click)="save()" ><i class="fa fa-save"></i> Save Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

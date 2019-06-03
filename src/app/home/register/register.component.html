@@ -1,0 +1,100 @@
+<div class="container">
+  <form class="form-horizontal" [formGroup]="registerForm">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <h2>Register</h2>
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 field-label-responsive">
+        <label for="name">Username</label>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon" style="width: 2.6rem">
+              <i class="fa fa-user"></i>
+            </div>
+            <input type="text" name="name" formControlName="userName" [ngClass]="{'is-invalid': registerForm.get('userName').errors
+            && registerForm.get('userName').touched}"
+              class="form-control" id="name" placeholder="John Doe" required autofocus />
+          </div>
+          <div class="form-control-feedback">
+          <span class="text-danger align-middle">
+            <i class="fa fa-exclamation-circle"  *ngIf="registerForm.get('userName').touched && registerForm.get('userName').hasError('required')">
+              Please insert a Username</i>
+          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 field-label-responsive">
+        <label for="password">Password</label>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group has-danger">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon" style="width: 2.6rem">
+              <i class="fa fa-key"></i>
+            </div>
+            <input type="password" formControlName="password" [ngClass]="{'is-invalid': registerForm.get('password').errors
+            && registerForm.get('password').touched}"
+              name="password" class="form-control" id="password" placeholder="Password" required />
+          </div>
+          <div class="form-control-feedback">
+          <span class="text-danger align-middle">
+            <i class="fa fa-exclamation-circle" *ngIf="registerForm.get('password').touched && registerForm.get('password').hasError('required')">
+              Password is required </i>
+              <i class="fa fa-exclamation-circle" *ngIf="registerForm.get('password').hasError('minlength')
+              && registerForm.get('password').touched"> Password
+                must be at least 4 characters</i>
+                <i class="fa fa-exclamation-circle" *ngIf="registerForm.get('password').hasError('maxlength')
+            && registerForm.get('password').touched"> Password
+              cannot exceed 8 characters</i>
+          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 field-label-responsive">
+        <label for="password"> Confirm Password</label>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon" style="width: 2.6rem">
+              <i class="fa fa-repeat"></i>
+            </div>
+            <input type="password" formControlName="confirmPassword" [ngClass]="{'is-invalid': registerForm.get('confirmPassword').errors
+            && registerForm.get('confirmPassword').touched
+            || registerForm.get('confirmPassword').touched
+            && registerForm.hasError('mismatch')}"
+              name="password-confirmation" class="form-control" id="password-confirm" placeholder="Password" required />
+          </div>
+          <div class="form-control-feedback">
+          <span class="text-danger align-middle">
+            <i class="fa fa-exclamation-circle" *ngIf="registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').hasError('required')"> Confirm
+              password required</i>
+              <i class="fa fa-exclamation-circle" *ngIf="registerForm.hasError('mismatch')
+            && registerForm.get('confirmPassword').touched"> Passwords
+              must match</i>
+          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+        <button type="submit" class="btn btn-success" (click)="register()">
+          <i class="fa fa-user-plus"></i> Register
+        </button>
+        <a [routerLink]="" (click)="login()"  style="color: #000">Already have an account? Sign in</a>
+      </div>
+    </div>
+  </form>
+</div>
