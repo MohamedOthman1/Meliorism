@@ -32,7 +32,7 @@ npm install
  
 # Demo 
 
-  [Live Demo](https://meliorism.herokuapp.com/)
+ [Live Demo](https://meliorism.herokuapp.com/)
   
 # What's coming next ?
   I have a lot of great features coming up
