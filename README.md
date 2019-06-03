@@ -17,14 +17,18 @@ This is Meliorism admin dashboard based on Angular 6 and Boostrap 4 .
 
 ## Quick start 
 
-'''git clone https://github.com/MohamedOthman1/Meliorism.git 
- ```
- ``` cd Meliorism
- ```
- ```npm install 
- ```
- ``` ng serve --open
- ```
+``` 
+git clone https://github.com/MohamedOthman1/Meliorism.git 
+```
+``` 
+cd Meliorism
+```
+``` 
+npm install 
+```
+``` 
+ ng serve --open
+```
  
 # Demo 
 
