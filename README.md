@@ -43,7 +43,7 @@ npm install
 
  [Live Demo](https://meliorism.herokuapp.com/)
 
-*Note: this demo doesn't it's just front end
+* Note: this demo it's just front end
   
 # What's coming next ?
   I have a lot of great features coming up
