@@ -8,8 +8,9 @@ This is Meliorism admin dashboard based on Boostrap 4 , Angular 6 and Asp.Net co
 * Font Awesome v 4.7.0
 * Kendo UI for Angular (grid , dialog module , ... )
 * Angular 6 Toaster Notifications Module
-* Asp.net Core
+* Asp.net Core 2.1
 * JWT
+* Auth Guard
 
 # Brief installation guide
 
