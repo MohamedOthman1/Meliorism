@@ -11,10 +11,13 @@ import { LoginComponent } from './home/login/login.component';
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 export const appRoutes: Routes = [
   {
     path: '', component: SidebarComponent,
+    runGuardsAndResolvers: 'always',
+    canActivate: [AuthGuard],
     children: [
       { path: 'index', component: DashboardComponent },
       { path: 'menu', component: MenuComponent },

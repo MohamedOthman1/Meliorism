@@ -14,7 +14,6 @@ export class OrderComponent implements OnInit {
   orderPdf = {
     title: 'Orders',
     url: '/order/addOrder',
-    name: 'order',
     columns: [
       { field: 'orderNumber', title: 'Order Number', width: '20', filter: 'text' },
       { field: 'orderTable', title: 'Order Table', width: '20', filter: 'text' },

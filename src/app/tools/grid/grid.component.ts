@@ -32,7 +32,7 @@ export class GridComponent implements OnInit {
 
   ngOnInit() {
    this.gridData = process(this.data, this.state);
-    this.confirmMessage = 'Are you sure you want to delete this ' + this.grid.customizedGrid.name + ' ?';
+    this.confirmMessage = 'Are you sure you want to delete this ' + this.grid.customizedGrid.title + ' ?';
   }
 
   public dataStateChange(state: DataStateChangeEvent): void {

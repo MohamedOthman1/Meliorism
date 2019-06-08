@@ -2,6 +2,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import {ToastrService} from '../../_services/toastr.service';
+import { AuthService } from 'src/app/_services/auth.service';
+import { User } from '../../_models/user';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +13,8 @@ import {ToastrService} from '../../_services/toastr.service';
 export class RegisterComponent implements OnInit {
   @Output() loginForm = new EventEmitter();
   registerForm: FormGroup;
-  constructor(private router: Router, private fb: FormBuilder, private toast: ToastrService) {}
+  user: User;
+  constructor(private router: Router, private fb: FormBuilder, private toast: ToastrService, private authService: AuthService) {}
 
   ngOnInit() {
     this.createRegisterForm();
@@ -44,7 +47,16 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.toast.success('Successfully Registered. You will now be taken back to the logon page!', 'Success');
-    this.loginForm.emit(true);
+    if (this.registerForm.valid) {
+      this.user = Object.assign({}, this.registerForm.value);
+      this.authService.register(this.user).subscribe(() => {
+        this.toast.success('Successfully Registered. You will now be taken back to the login page!', 'Success');
+      }, error => {
+        this.toast.error(error, 'Error');
+        }, () => {
+          this.loginForm.emit(true);
+        });
+    }
   }
+
 }

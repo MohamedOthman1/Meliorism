@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class GridService {
   customizedGrid = {
     title: '',
-    name: '',
     url: '',
     columns: [
       { field: '',

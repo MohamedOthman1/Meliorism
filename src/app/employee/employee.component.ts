@@ -13,7 +13,6 @@ export class EmployeeComponent implements OnInit {
   employeePdf = {
       title: 'Employees',
       url: '/employee/addEmployee',
-      name: 'employee',
       columns: [
         { field: 'name', title: 'Name', filter: 'text', width: '50' },
         { field: 'age', title: 'Age', filter: 'numeric', width: '50' },
